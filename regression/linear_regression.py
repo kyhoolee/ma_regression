@@ -46,7 +46,7 @@ def svr(ma_x, ma_target):
 
 
 def random_forest(ma_x, ma_target):
-    clf = RandomForestRegressor(max_depth=2, random_state=0)
+    clf = RandomForestRegressor(max_depth=8, random_state=0)
     clf.fit(ma_x, ma_target)
 
     print(clf)
@@ -54,7 +54,7 @@ def random_forest(ma_x, ma_target):
 
 
 def decision_tree(ma_x, ma_target):
-    clf = DecisionTreeRegressor(max_depth=4)
+    clf = DecisionTreeRegressor(max_depth=8)
     clf.fit(ma_x, ma_target)
 
     print(clf)
