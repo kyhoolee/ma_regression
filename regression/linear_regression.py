@@ -12,19 +12,20 @@ import math
 
 
 def mse_variance(model, ma_x, ma_target):
+    print(model, "  ")
     # The mean squared error
-    print("Logarithm mean squared error: %.2f"
+    print("Logarithm mean squared error: %.2f  "
           % math.log(np.mean((model.predict(ma_x) - ma_target) ** 2)))
     # Explained variance score: 1 is perfect prediction
-    print('Variance score: %.2f' % model.score(ma_x, ma_target))
-    print()
+    print('Variance score: %.2f  ' % model.score(ma_x, ma_target))
+    print("  ")
 
 
 def linear_regression(ma_x, ma_target):
     regr = linear_model.LinearRegression()
     regr.fit(ma_x, ma_target)
 
-    print(regr)
+
     mse_variance(regr, ma_x, ma_target)
 
 
@@ -33,7 +34,7 @@ def kernel_ridge(ma_x, ma_target):
     #KernelRidge(kernel='rbf', gamma=0.1)
     clf.fit(ma_x, ma_target)
 
-    print(clf)
+
     mse_variance(clf, ma_x, ma_target)
 
 
@@ -41,7 +42,7 @@ def svr(ma_x, ma_target):
     clf = SVR(C=1.0, epsilon=0.2)
     clf.fit(ma_x, ma_target)
 
-    print(clf)
+
     mse_variance(clf, ma_x, ma_target)
 
 
@@ -49,7 +50,7 @@ def random_forest(ma_x, ma_target):
     clf = RandomForestRegressor(max_depth=8, random_state=0)
     clf.fit(ma_x, ma_target)
 
-    print(clf)
+
     mse_variance(clf, ma_x, ma_target)
 
 
@@ -57,7 +58,7 @@ def decision_tree(ma_x, ma_target):
     clf = DecisionTreeRegressor(max_depth=8)
     clf.fit(ma_x, ma_target)
 
-    print(clf)
+
     mse_variance(clf, ma_x, ma_target)
 
 
@@ -65,7 +66,7 @@ def ada_boost(ma_x, ma_target):
     clf = AdaBoostRegressor()
     clf.fit(ma_x, ma_target)
 
-    print(clf)
+
     mse_variance(clf, ma_x, ma_target)
 
 
